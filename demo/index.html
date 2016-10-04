@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+  <head>
+    <title>paper-buttons-group demo</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+
+    <link rel="import" href="../paper-buttons-group.html">
+    <link rel="import" href="../../paper-button/paper-button.html">
+    <link rel="import" href="../../paper-styles/color.html">
+    <link rel="import" href="../../iron-icon/iron-icon.html">
+    <link rel="import" href="../../iron-icons/iron-icons.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+      #customGroup paper-button {
+        background-color: var(--google-blue-300);
+        color: white;
+      }
+      #customGroup {
+        --paper-buttons-group-selected: {
+          background-color: var(--google-blue-700) !important;
+        };
+      }
+    </style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic paper-buttons-group Demo</h3>
+      <demo-snippet>
+        <template>
+          <paper-buttons-group>
+            <paper-button>Choice 1</paper-button>
+            <paper-button>Choice 2</paper-button>
+            <paper-button>Choice 3</paper-button>
+          </paper-buttons-group>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>paper-buttons-group with icons</h3>
+      <demo-snippet>
+        <template>
+          <paper-buttons-group>
+            <paper-button>
+              <iron-icon icon="alarm"></iron-icon>
+            </paper-button>
+            <paper-button>
+              <iron-icon icon="android"></iron-icon>
+            </paper-button>
+            <paper-button>
+              <iron-icon icon="polymer"></iron-icon>
+            </paper-button>
+          </paper-buttons-group>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>Custom paper-buttons-group style</h3>
+      <demo-snippet>
+        <template>
+          <paper-buttons-group id="customGroup">
+            <paper-button>
+              <iron-icon icon="done"></iron-icon>
+            </paper-button>
+            <paper-button>
+              <iron-icon icon="done-all"></iron-icon>
+            </paper-button>
+            <paper-button>
+              <iron-icon icon="clear"></iron-icon>
+            </paper-button>
+          </paper-buttons-group>
+        </template>
+      </demo-snippet>
+    </div>
+
+    <div class="vertical-section-container centered">
+      <h3>Multi button selection Demo</h3>
+      <demo-snippet>
+        <template>
+          <paper-buttons-group multi>
+            <paper-button>Choice 1</paper-button>
+            <paper-button>Choice 2</paper-button>
+            <paper-button>Choice 3</paper-button>
+          </paper-buttons-group>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
