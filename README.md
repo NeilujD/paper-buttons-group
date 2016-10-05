@@ -2,6 +2,8 @@
 
 A button group with `paper-button` style
 
+## [Demo](https://neilujd.github.io/paper-buttons-group)
+
 ## Install the Polymer-CLI
 
 First, make sure you have the [Polymer CLI](https://www.npmjs.com/package/polymer-cli) installed. Then run `polymer serve` to serve your application locally.
