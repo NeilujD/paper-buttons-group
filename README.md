@@ -1,8 +1,8 @@
+[Demo and API Docs](https://neilujd.github.io/paper-buttons-group)
+
 # \<paper-buttons-group\>
 
 A button group with `paper-button` style
-
-## [Demo](https://neilujd.github.io/paper-buttons-group)
 
 ## Install the Polymer-CLI
 
