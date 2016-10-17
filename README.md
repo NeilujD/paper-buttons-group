@@ -10,7 +10,7 @@
   <template>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="../paper-button/paper-button.html">
-    <link rel="import" href="paper-avatar.html">
+    <link rel="import" href="paper-buttons-group.html">
     <next-code-block></next-code-block>
   </template>
 </custom-element-demo>
