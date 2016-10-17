@@ -2,6 +2,28 @@
 
 # \<paper-buttons-group\>
 
+## Example
+
+<!---
+```
+<custom-element-demo>
+  <template>
+    <script src="../webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="../paper-button/paper-button.html">
+    <link rel="import" href="paper-avatar.html">
+    <next-code-block></next-code-block>
+  </template>
+</custom-element-demo>
+```
+-->
+```html
+<paper-buttons-group selected="0">
+  <paper-button>CHOICE 1</paper-button>
+  <paper-button>CHOICE 2</paper-button>
+  <paper-button>CHOICE 3</paper-button>
+</paper-buttons-group>
+```
+
 A button group with `paper-button` style
 
 ## Install the Polymer-CLI
