@@ -42,9 +42,9 @@ Custom property | Description | Default
   <template>
     <style include="paper-material-shared-styles">
       :host {
-        @apply --layout-horizontal;
+        @apply(--layout-horizontal);
         overflow: hidden;
-        @apply --layout-inline;
+        @apply(--layout-inline);
         position: relative;
         box-sizing: border-box;
         min-width: 5.14em;
@@ -61,10 +61,10 @@ Custom property | Description | Default
         -webkit-user-select: none;
         user-select: none;
         cursor: pointer;
-        z-index: 0;$
+        z-index: 0;
 
-        @apply --paper-font-common-base;
-        @apply --paper-buttons-group;
+        @apply(--paper-font-common-base);
+        @apply(--paper-buttons-group);
       }
 
       :host([hidden]) {
@@ -73,12 +73,12 @@ Custom property | Description | Default
 
       :host([raised].keyboard-focus) {
         font-weight: bold;
-        @apply --paper-buttons-group-raised-keyboard-focus;
+        @apply(--paper-buttons-group-raised-keyboard-focus);
       }
 
       :host(:not([raised]).keyboard-focus) {
         font-weight: bold;
-        @apply --paper-buttons-group-flat-keyboard-focus;
+        @apply(--paper-buttons-group-flat-keyboard-focus);
       }
 
       :host([disabled]) {
@@ -87,11 +87,11 @@ Custom property | Description | Default
         cursor: auto;
         pointer-events: none;
 
-        @apply --paper-buttons-group-disabled;
+        @apply(--paper-buttons-group-disabled);
       }
 
       :host([animated]) {
-        @apply --shadow-transition;
+        @apply(--shadow-transition);
       }
 
       paper-ripple {
@@ -104,7 +104,7 @@ Custom property | Description | Default
       }
       ::slotted(paper-button.iron-selected) {
         background-color: var(--google-grey-300);
-        @apply --paper-buttons-group-selected;
+        @apply(--paper-buttons-group-selected);
       }
     </style>
 
