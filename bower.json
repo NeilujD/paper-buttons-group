@@ -34,6 +34,7 @@
     "web-component-tester": "^4.0.0",
     "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.20",
     "iron-icon": "PolymerElements/iron-icon#^1.0.11",
-    "iron-icons": "PolymerElements/iron-icons#^1.1.3"
+    "iron-icons": "PolymerElements/iron-icons#^1.1.3",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#^1.2.5"
   }
 }

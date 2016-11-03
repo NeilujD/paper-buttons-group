@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../iron-test-helpers/mock-interactions.js"></script>
 
     <link rel="import" href="../../paper-button/paper-button.html">
 
@@ -67,7 +68,7 @@
         test('select by taping on a choice works', function () {
           var element = fixture('simpleChoice');
           var choice = document.getElementById("simpleChoice2");
-          choice.fire("tap");
+          MockInteractions.tap(choice);
           assert.equal(element.selected, 1);
         });
 
@@ -83,10 +84,10 @@
           var choice1 = document.getElementById("multiChoice1");
           var choice2 = document.getElementById("multiChoice2");
           var choice3 = document.getElementById("multiChoice3");
-          choice1.fire("tap");
-          choice1.fire("tap");
-          choice2.fire("tap");
-          choice3.fire("tap");
+          MockInteractions.tap(choice1);
+          MockInteractions.tap(choice1);
+          MockInteractions.tap(choice2);
+          MockInteractions.tap(choice3);
           assert.deepEqual(element.selectedValues, [1, 2]);
         });
 
