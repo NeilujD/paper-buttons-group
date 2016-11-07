@@ -12,7 +12,6 @@ addons:
     - google-chrome
     packages:
     - google-chrome-stable
-  sauce_connect: true
 script:
 - polymer test
 dist: trusty
