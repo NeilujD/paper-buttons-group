@@ -12,7 +12,6 @@ addons:
     - google-chrome
     packages:
     - google-chrome-stable
-    - google-chrome-canary
 script:
 - polymer test
 dist: trusty
