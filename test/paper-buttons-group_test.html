@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../iron-test-helpers/mock-interactions.js"></script>
 
     <link rel="import" href="../../paper-button/paper-button.html">
 
@@ -52,48 +53,53 @@
 
     <script>
       suite('paper-buttons-group', function() {
+        var basicElement,
+            simpleChoiceElement,
+            multiChoicesElement,
+            attrForSelectedElement;
+
+        setup(function() {
+          basicElement = fixture('basic');
+          simpleChoiceElement = fixture('simpleChoice');
+          multiChoicesElement = fixture('multiChoices');
+          attrForSelectedElement = fixture('attrForSelectedChoice');
+        });
 
         test('instantiating the element works', function() {
-          var element = fixture('basic');
-          assert.equal(element.is, 'paper-buttons-group');
+          assert.equal(basicElement.is, 'paper-buttons-group');
         });
 
         test('select with `select` method simple choice works', function () {
-          var element = fixture('simpleChoice');
-          element.select(1);
-          assert.equal(element.selected, 1);
+          simpleChoiceElement.select(1);
+          assert.equal(simpleChoiceElement.selected, 1);
         });
 
         test('select by taping on a choice works', function () {
-          var element = fixture('simpleChoice');
           var choice = document.getElementById("simpleChoice2");
-          choice.fire("tap");
-          assert.equal(element.selected, 1);
+          MockInteractions.tap(choice);
+          assert.equal(simpleChoiceElement.selected, 1);
         });
 
         test('select with `select` method multi choice works', function () {
-          var element = fixture('multiChoices');
-          element.select(0);
-          element.select(1);
-          assert.deepEqual(element.selectedValues, [0, 1]);
+          multiChoicesElement.select(0);
+          multiChoicesElement.select(1);
+          assert.deepEqual(multiChoicesElement.selectedValues, [0, 1]);
         });
 
         test('select by taping on mutil choices', function () {
-          var element = fixture('multiChoices');
           var choice1 = document.getElementById("multiChoice1");
           var choice2 = document.getElementById("multiChoice2");
           var choice3 = document.getElementById("multiChoice3");
-          choice1.fire("tap");
-          choice1.fire("tap");
-          choice2.fire("tap");
-          choice3.fire("tap");
-          assert.deepEqual(element.selectedValues, [1, 2]);
+          MockInteractions.tap(choice1);
+          MockInteractions.tap(choice1);
+          MockInteractions.tap(choice2);
+          MockInteractions.tap(choice3);
+          assert.deepEqual(multiChoicesElement.selectedValues, [1, 2]);
         });
 
         test('select with `select` method simple choice with `attrForSelected` works', function () {
-          var element = fixture('attrForSelectedChoice');
-          element.select("choice2");
-          assert.equal(element.selected, "choice2");
+          attrForSelectedElement.select("choice2");
+          assert.equal(attrForSelectedElement.selected, "choice2");
         });
 
       });

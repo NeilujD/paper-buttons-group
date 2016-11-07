@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/NeilujD/paper-buttons-group.svg?branch=develop)](https://travis-ci.org/NeilujD/paper-buttons-group)
+
 [Demo and API Docs](https://neilujd.github.io/paper-buttons-group)
 
 # \<paper-buttons-group\>
