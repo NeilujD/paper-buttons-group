@@ -6,7 +6,7 @@ before_script:
 - polymer lint
 node_js: stable
 addons:
-  firefox: lastest
+  firefox: latest
   apt:
     sources:
     - google-chrome
