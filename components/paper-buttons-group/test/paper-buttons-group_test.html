@@ -7,6 +7,9 @@
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
     <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
     <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../iron-test-helpers/mock-interactions.js"></script>
+
+    <link rel="import" href="../../paper-button/paper-button.html">
 
     <link rel="import" href="../paper-buttons-group.html">
   </head>
@@ -18,12 +21,85 @@
       </template>
     </test-fixture>
 
+    <test-fixture id="simpleChoice">
+      <template>
+        <paper-buttons-group>
+          <paper-button id="simpleChoice1">CHOICE 1</paper-button>
+          <paper-button id="simpleChoice2">CHOICE 2</paper-button>
+          <paper-button id="simpleChoice3">CHOICE 3</paper-button>
+        </paper-buttons-group>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="multiChoices">
+      <template>
+        <paper-buttons-group multi>
+          <paper-button id="multiChoice1">CHOICE 1</paper-button>
+          <paper-button id="multiChoice2">CHOICE 2</paper-button>
+          <paper-button id="multiChoice3">CHOICE 3</paper-button>
+        </paper-buttons-group>
+      </template>
+    </test-fixture>
+
+    <test-fixture id="attrForSelectedChoice">
+      <template>
+        <paper-buttons-group attr-for-selected="choice">
+          <paper-button choice="choice1">CHOICE 1</paper-button>
+          <paper-button choice="choice2">CHOICE 2</paper-button>
+          <paper-button choice="choice2">CHOICE 3</paper-button>
+        </paper-buttons-group>
+      </template>
+    </test-fixture>
+
     <script>
       suite('paper-buttons-group', function() {
+        var basicElement,
+            simpleChoiceElement,
+            multiChoicesElement,
+            attrForSelectedElement;
+
+        setup(function() {
+          basicElement = fixture('basic');
+          simpleChoiceElement = fixture('simpleChoice');
+          multiChoicesElement = fixture('multiChoices');
+          attrForSelectedElement = fixture('attrForSelectedChoice');
+        });
 
         test('instantiating the element works', function() {
-          var element = fixture('basic');
-          assert.equal(element.is, 'paper-buttons-group');
+          assert.equal(basicElement.is, 'paper-buttons-group');
+        });
+
+        test('select with `select` method simple choice works', function () {
+          simpleChoiceElement.select(1);
+          assert.equal(simpleChoiceElement.selected, 1);
+        });
+
+        test('select by taping on a choice works', function () {
+          var choice = document.getElementById("simpleChoice2");
+          MockInteractions.tap(choice);
+          assert.equal(simpleChoiceElement.selected, 1);
+        });
+
+        test('select with `select` method multi choice works', function () {
+          multiChoicesElement.select(0);
+          multiChoicesElement.select(1);
+          assert.deepEqual(multiChoicesElement.selectedValues, [0, 1]);
+        });
+
+        test('select by taping on mutil choices', function () {
+          var choice1 = document.getElementById("multiChoice1");
+          var choice2 = document.getElementById("multiChoice2");
+          var choice3 = document.getElementById("multiChoice3");
+          MockInteractions.tap(choice1);
+          MockInteractions.tap(choice1);
+          MockInteractions.tap(choice2);
+          MockInteractions.tap(choice3);
+          assert.deepEqual(multiChoicesElement.selectedValues, [1, 2]);
+        });
+
+        test('select with `select` method simple choice with `attrForSelected` works', function () {
+          attrForSelectedElement.select("choice2");
+          assert.equal(attrForSelectedElement.selected, "choice2");
         });
 
       });

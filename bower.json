@@ -1,32 +1,42 @@
 {
   "name": "paper-buttons-group",
-  "version": "1.0.0",
-  "description": "A button group with `paper-button` style",
+  "version": "2.0.0",
+  "description": "A button group with paper-button style",
+  "homepage": "https://neilujd.github.io/paper-buttons-group",
   "authors": [
-    "NeilujD"
+    "Julien Collard <julien.collard14@gmail.com> (http://neilujd.com)"
   ],
+  "license": "Apache-2.0",
   "keywords": [
     "web-components",
     "polymer",
     "button",
-    "group"
+    "group",
+    "polymer2"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/neilujd/paper-buttons-group.git"
+  },
   "main": "paper-buttons-group.html",
+  "ignore": [],
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.7.0",
-    "paper-button": "PolymerElements/paper-button#^1.0.13",
-    "iron-selector": "PolymerElements/iron-selector#^1.5.2",
-    "paper-material": "PolymerElements/paper-material#^1.0.6",
-    "paper-behaviors": "PolymerElements/paper-behaviors#^1.0.12",
-    "iron-flex-layout": "PolymerElements/iron-flex-layout#^1.3.1",
-    "paper-styles": "PolymerElements/paper-styles#^1.1.5"
+    "polymer": "Polymer/polymer#^2.0.0",
+    "paper-button": "PolymerElements/paper-button#^2.0.0",
+    "iron-selector": "PolymerElements/iron-selector#^2.0.0",
+    "paper-material": "PolymerElements/paper-material#^2.0.0",
+    "paper-behaviors": "PolymerElements/paper-behaviors#^2.0.0",
+    "iron-flex-layout": "PolymerElements/iron-flex-layout#^2.0.0",
+    "paper-styles": "PolymerElements/paper-styles#^2.0.0",
+    "paper-buttons-group": "NeilujD/paper-buttons-group#^2.0.0"
   },
   "devDependencies": {
-    "iron-component-page": "PolymerElements/iron-component-page#^1.0.0",
-    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^1.0.0",
-    "web-component-tester": "^4.0.0",
-    "webcomponentsjs": "webcomponents/webcomponentsjs#^0.7.0",
-    "iron-icon": "PolymerElements/iron-icon#^1.0.11",
-    "iron-icons": "PolymerElements/iron-icons#^1.1.3"
+    "iron-component-page": "PolymerElements/iron-component-page#^2.0.0",
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
+    "web-component-tester": "^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0",
+    "iron-icon": "PolymerElements/iron-icon#^2.0.0",
+    "iron-icons": "PolymerElements/iron-icons#^2.0.0",
+    "iron-test-helpers": "PolymerElements/iron-test-helpers#^2.0.0"
   }
 }
