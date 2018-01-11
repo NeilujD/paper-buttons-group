@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/NeilujD/paper-buttons-group.svg?branch=develop)](https://travis-ci.org/NeilujD/paper-buttons-group)
+![Vaadin Directory availability](https://img.shields.io/badge/Vaadin%20Directory-available-green.svg?style=flat-square&colorB=00b4f0&link=https://vaadin.com/directory)
 
 [Demo and API Docs](https://neilujd.github.io/paper-buttons-group)
 
