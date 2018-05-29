@@ -5,6 +5,7 @@
 <link rel="import" href="../paper-material/paper-material-shared-styles.html">
 <link rel="import" href="../paper-behaviors/paper-button-behavior.html">
 <link rel="import" href="../iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../iron-validatable-behavior/iron-validatable-behavior.html">
 
 <!--
 Material design: [Buttons](https://www.google.com/design/spec/components/buttons.html)
@@ -67,6 +68,13 @@ Custom property | Description | Default
         @apply --paper-buttons-group;
       }
 
+      :host([invalid]) {
+        border-style: solid;
+        border-width: 1px;
+        border-color: red;
+        box-shadow: 0px 0px 5px 0px darkred;;
+      }
+
       :host([hidden]) {
         display: none !important;
       }
@@ -116,7 +124,8 @@ Custom property | Description | Default
 
       behaviors: [
         Polymer.IronMultiSelectableBehavior,
-        Polymer.PaperButtonBehavior
+        Polymer.PaperButtonBehavior,
+        Polymer.IronValidatableBehavior
       ],
 
       properties: {
@@ -136,7 +145,12 @@ Custom property | Description | Default
         noink: {
           type: Boolean,
           value: true
-        }
+        },
+        /**
+         * True if the error is showing.
+         */
+        invalid: {/*readOnly: true,*/ reflectToAttribute: true, type: Boolean},
+        selected: { observer: function(a, b) { this.validate(); }}
       },
 
       _calculateElevation: function() {
@@ -145,6 +159,10 @@ Custom property | Description | Default
         } else {
           Polymer.PaperButtonBehaviorImpl._calculateElevation.apply(this);
         }
+      },
+      validate() {
+        this.set('invalid', (this.selected == null));
+        return !(this.invalid);
       }
 
       /**

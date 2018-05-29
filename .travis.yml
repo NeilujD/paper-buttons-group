@@ -3,7 +3,7 @@ sudo: required
 before_script:
 - npm install -g bower polymer-cli
 - bower install
-- polymer lint --input paper-buttons-group.html
+- polymer lint --input paper-buttons-group.html --rules=polymer-2
 node_js: stable
 addons:
   firefox: latest
